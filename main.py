@@ -11,8 +11,8 @@ import os
 import argparse
 
 from OurLMFRNet import *
-from .utils import progress_bar
-from .util.cutout import Cutout
+from utils import progress_bar
+from util.cutout import Cutout
 
 # To express gratitude for the following code:
 # https://github.com/kuangliu/pytorch-cifar/tree/master

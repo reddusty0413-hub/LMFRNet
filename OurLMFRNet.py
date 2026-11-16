@@ -115,7 +115,14 @@ if __name__ == '__main__':
 
     from thop import profile
     input_shape = (1, 3, 32, 32)
-    flops, params = profile(model, inputs=(torch.randn(*input_shape),))
+    result = profile(
+        model,
+        inputs=(torch.randn(*input_shape),),
+        ret_layer_info=False
+    )
+
+    flops = result[0]
+    params = result[1]
     print(f"Model flops: {flops}")
     print(f"Model Params: {params}")
 
